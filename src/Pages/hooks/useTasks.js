@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 const useTasks = () => {
 const [tasks, setTasks] = useState([]);
 useEffect(() => {
-    fetch('http://localhost:5000/task ', {
+    fetch('https://arrogant-smarties-24731.herokuapp.com/task ', {
         method: 'GET',
         headers: {
             authorization: 'application/json'

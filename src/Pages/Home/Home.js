@@ -5,20 +5,14 @@ import ToDo from './ToDo';
 const Home = () => {
     const [tasks] = useTasks({})
 
-    const handelDailyTask = (event,keypress) => {
+    const handelDailyTask = (event) => {
         event.preventDefault();
         const title = event.target.task.value
         const details = event.target.details.value
         const time = event.target.time.value
         const data = { title, details, time }
-        if (event.key === "Enter") {
-            // Cancel the default action, if needed
-            event.preventDefault();
-            // Trigger the button element with a click
-            document.getElementById("myBtn").click();
-          }
-
-        fetch('http://localhost:5000/task', {
+        
+        fetch('https://arrogant-smarties-24731.herokuapp.com/task', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -29,8 +23,9 @@ const Home = () => {
             .then(data => {
                 console.log('Success:', data);
             })
-
     }
+
+
     return (
         <div className='bg-base-200 '>
            <div>
@@ -45,8 +40,8 @@ const Home = () => {
             <div className="modal ">
                 <div className="modal-box w-10/12 max-w-5xl">
                     <div className='menu p-4 overflow-y-auto w-5/6 bg-base-100 text-base-content '>
-                        <form onSubmit={handelDailyTask} className='mx-auto'>
-                            <label className="block">
+                        <form  onSubmit={handelDailyTask} className='mx-auto'>
+                            <label   className="block">
                                 <input  type="text" name="task" className="mt-1 px-3 py-2 bg-white border shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none focus:border-sky-500   w-full rounded-md sm:text-sm " placeholder="New Task" />
                             </label>
                             <label className="block">

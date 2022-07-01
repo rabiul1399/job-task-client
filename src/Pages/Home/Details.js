@@ -17,7 +17,7 @@ const Details = () => {
 
 
     useEffect(() => {
-        fetch(`http://localhost:5000/task/${id}`, {
+        fetch(`https://arrogant-smarties-24731.herokuapp.com/task/${id}`, {
             method: 'GET',
             headers: {
                 authorization: 'application/json'
@@ -36,7 +36,7 @@ const Details = () => {
 
     const updateTask = () =>{
      
-        fetch(`http://localhost:5000/task/${id}`, {
+        fetch(`https://arrogant-smarties-24731.herokuapp.com/task/${id}`, {
             method: 'PUT',
             headers:{
               'Content-Type':'application/json'

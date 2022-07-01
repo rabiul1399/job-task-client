@@ -11,7 +11,7 @@ const AddTask = () => {
 
 
 
-   fetch('http://localhost:5000/task', {
+   fetch('https://arrogant-smarties-24731.herokuapp.com/task', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
