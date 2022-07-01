@@ -8,16 +8,17 @@ let footer = <p>Please pick a day.</p>;
   if (data) {
     footer = <p>You picked {format(data, 'PP')}.</p>;
   }
+
     return (
-        <div class="card w-96 mx-auto mt-14 bg-base-100 shadow-xl">
+        <div className="card w-96 mx-auto mt-14 bg-base-100 shadow-xl">
         <DayPicker 
         mode="single"
         selected={data}
           onSelect={setDate}
           footer={footer} />
-
         
       </div>
+
     );
 };
 
